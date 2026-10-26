@@ -1,79 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fitsSystemWindows="true"
+    android:background="?android:attr/colorBackground">
 
-    <LinearLayout
+    <ScrollView
+        android:id="@+id/telaCadastro"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:clipToPadding="false">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Contato"
-            android:textColor="#176B63"
-            android:textSize="26sp"
-            android:textStyle="bold" />
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingTop="28dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="16dp">
 
-        <EditText
-            android:id="@+id/etNome"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nome (obrigatório)"
-            android:inputType="textPersonName"
-            android:singleLine="true" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contato"
+                android:textColor="#176B63"
+                android:layout_marginBottom="16dp"
+                android:textSize="26sp"
+                android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/etTelefone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Telefone (obrigatório)"
-            android:inputType="phone"
-            android:singleLine="true" />
+            <EditText
+                android:id="@+id/etNome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nome (obrigatório)"
+                android:inputType="textPersonName"
+                android:singleLine="true" />
 
-        <EditText
-            android:id="@+id/etEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="E-mail (opcional)"
-            android:inputType="textEmailAddress"
-            android:singleLine="true" />
+            <EditText
+                android:id="@+id/etTelefone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Telefone (obrigatório)"
+                android:inputType="phone"
+                android:singleLine="true" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Categoria" />
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="E-mail (opcional)"
+                android:inputType="textEmailAddress"
+                android:singleLine="true" />
 
-        <Spinner
-            android:id="@+id/spCategoria"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:contentDescription="Categoria do contato" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Categoria" />
 
-        <Button
-            android:id="@+id/btnSalvar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Salvar"
-            android:onClick="salvarContato" />
+            <Spinner
+                android:id="@+id/spCategoria"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:contentDescription="Categoria do contato" />
 
-        <Button
-            android:id="@+id/btnExcluir"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Excluir"
-            android:onClick="excluirContato"
-            android:visibility="gone" />
+            <Button
+                android:id="@+id/btnSalvar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Salvar"
+                android:onClick="salvarContato" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Cancelar"
-            android:onClick="cancelar" />
+            <Button
+                android:id="@+id/btnExcluir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Excluir"
+                android:onClick="excluirContato"
+                android:visibility="gone" />
 
-    </LinearLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cancelar"
+                android:onClick="cancelar" />
 
-</ScrollView>
+        </LinearLayout>
+
+    </ScrollView>
+</FrameLayout>

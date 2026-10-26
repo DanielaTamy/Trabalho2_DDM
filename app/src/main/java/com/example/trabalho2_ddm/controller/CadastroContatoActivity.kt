@@ -99,6 +99,11 @@ class CadastroContatoActivity : AppCompatActivity() {
             return
         }
 
+        if (nome.length < 2 || nome.length > 80) {
+            mostrarErro(etNome, "O nome deve ter de 2 a 80 caracteres")
+            return
+        }
+
         // Aceita dígitos e os separadores usuais de telefone.
         val formatoTelefone = Regex("[0-9+()\\s-]+")
         val telefone = telefoneDigitado.replace(Regex("[^0-9]"), "")
@@ -107,6 +112,16 @@ class CadastroContatoActivity : AppCompatActivity() {
             telefone.isEmpty()
         ) {
             mostrarErro(etTelefone, "Informe um telefone válido")
+            return
+        }
+
+        if (telefone.length < 10 || telefone.length > 15) {
+            mostrarErro(etTelefone, "O telefone deve ter de 10 a 15 dígitos")
+            return
+        }
+
+        if (email.length > 120) {
+            mostrarErro(etEmail, "O e-mail deve ter no máximo 120 caracteres")
             return
         }
 

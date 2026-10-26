@@ -1,62 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:fitsSystemWindows="true"
+    android:background="?android:attr/colorBackground">
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/telaPrincipal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textColor="#176B63"
-        android:textSize="26sp"
-        android:textStyle="bold" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingTop="28dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="16dp">
 
-    <EditText
-        android:id="@+id/etBusca"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Buscar por nome"
-        android:inputType="textPersonName"
-        android:singleLine="true" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="#176B63"
+            android:layout_marginBottom="16dp"
+            android:textSize="26sp"
+            android:textStyle="bold" />
 
-    <Spinner
-        android:id="@+id/spFiltroCategoria"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:contentDescription="Filtrar por categoria" />
+        <EditText
+            android:id="@+id/etBusca"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Buscar por nome"
+            android:inputType="textPersonName"
+            android:singleLine="true" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Aplicar filtros"
-        android:onClick="filtrarContatos" />
+        <Spinner
+            android:id="@+id/spFiltroCategoria"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:contentDescription="Filtrar por categoria" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Listar todos"
-        android:onClick="listarTodos" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aplicar filtros"
+            android:onClick="filtrarContatos" />
 
-    <TextView
-        android:id="@+id/tvVazio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nenhum contato encontrado"
-        android:padding="16dp"
-        android:visibility="gone" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Listar todos"
+            android:onClick="listarTodos" />
 
-    <ListView
-        android:id="@+id/lvContatos"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        <TextView
+            android:id="@+id/tvVazio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nenhum contato encontrado"
+            android:padding="16dp"
+            android:visibility="gone" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Novo contato"
-        android:onClick="novoContato" />
+        <ListView
+            android:id="@+id/lvContatos"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
-</LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Novo contato"
+            android:onClick="novoContato" />
+
+    </LinearLayout>
+</FrameLayout>
